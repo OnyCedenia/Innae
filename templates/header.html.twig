@@ -1,0 +1,33 @@
+<header>
+<div class="logo">
+    <a href="{{ path('app_home') }}">
+        <img src="{{ asset('assets/img/logo.PNG') }}" alt="logo Innae">
+    </a>
+</div>
+
+	<nav>
+		<ul class="listNav">
+			<li class="liNav">
+				<a href="{{ path('app_event_public') }}">
+					Event</a>
+			</li>
+			<li class="liNav">
+				<a href="{{ path('app_order_public') }}">
+					Bêret Personnalisé</a>
+			</li>
+			<li class="liNav">
+			               <a href="{{ path('app_training_index') }}">Cours/Ateliers</a> 
+			            </li>
+			<li class="liNav">
+				<a href="{{ path('app_contact_public') }}">Contact</a>
+			</li>
+			<li class="liNav login-link">
+				<a href="{{ path('app_login') }}">
+					<iconify-icon icon="streamline-freehand:login-rectangle" width="32" height="32"></iconify-icon>
+				</a>
+			</li>
+
+		</ul>
+
+	</nav>
+</header>

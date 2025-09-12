@@ -1,3 +1,194 @@
+:root {
+  --primary-color: #F66D6B;
+  --secondary-color: #FBE8E2;
+  --text-color: #000;
+  --background-color: #fff;
+  --error-color: #ff0000;
+  --success-color: #00ff00;
+
+
+
+}
+
+
 body {
-    background-color: skyblue;
+
+  font-family: "Lily Script One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/**********************HEADER**********************/
+header>.logo img {
+  height: 175px;
+  width: auto;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+
+}
+
+nav .listNav {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  justify-content: space-around;
+}
+
+nav .listNav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  border: var(--primary-color) 2px solid;
+  padding: 8px 15px;
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
+
+
+nav .listNav a:hover {
+  color: var(--primary-color);
+ 
+   background-color: var(--secondary-color);
+
+}
+
+li.login-link a {
+  padding: 5px 10px;
+  border-radius: 50%;
+  width: 40px;
+  border: 2px solid var(--primary-color);
+  transition: background 0.3s ease;
+}
+
+li.login-link a:hover {
+  background-color: var(--secondary-color);
+
+}
+
+/**********************MAIN**********************/
+
+
+h1 {
+
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/**********************TRAINING**********************/
+.training-links {
+  display: flex;
+}
+.training-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.training-card {
+  flex: 1;
+  text-align: center;
+}
+
+.training-card img {
+  width: 70%;
+  height: 50%; 
+  object-fit: cover; 
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+}
+
+
+/**********************LESSONS**********************/
+
+.all-lessons {
+  display: flex;         
+  gap: 20px;               
+  flex-wrap: wrap;        
+  justify-content: center; 
+}
+
+.lessons {
+  flex: 1 1 300px;     
+  border: 2px solid var(--primary-color); 
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box; 
+  text-align: center;
+}
+
+.lessons > h2{
+  text-align: center;
+}
+
+.lessons-prices>p{
+
+ color: var(--primary-color);
+}
+
+.lessons-information{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-link{
+   color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  border: var(--primary-color) 2px solid;
+  padding: 8px 15px;
+  display: inline-block;
+  width: 150px;
+  text-align: center
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+ 
+   background-color: var(--secondary-color);
+
+}
+
+/**********************ANIMATIONS**********************/
+
+.all-animations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.animations-description {
+  flex: 1 1 300px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--secondary-color);
+}
+
+.all-animations > h2 {
+    width: 100%;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.animations{
+  text-align: center;
+  margin-top: 20px;
+   flex: 1 1 300px;     
+  border: 2px solid var(--primary-color); 
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box; 
+  text-align: center;
 }

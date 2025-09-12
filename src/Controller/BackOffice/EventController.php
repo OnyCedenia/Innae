@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\BackOffice;
 
 use App\Entity\Event;
 use App\Form\EventType;
@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/event')]
+#[Route('/admin/event')]
 final class EventController extends AbstractController
 {
-    #[Route(name: 'app_event_index', methods: ['GET'])]
+    #[Route('/', name: 'app_event_index', methods: ['GET'])]
     public function index(EventRepository $eventRepository): Response
     {
         return $this->render('event/index.html.twig', [
@@ -71,7 +71,7 @@ final class EventController extends AbstractController
     #[Route('/{id}', name: 'app_event_delete', methods: ['POST'])]
     public function delete(Request $request, Event $event, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->getPayload()->getString('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $event->getId(), $request->getPayload()->getString('_token'))) {
             $entityManager->remove($event);
             $entityManager->flush();
         }

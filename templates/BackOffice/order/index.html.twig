@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les commandes{% endblock %}
+
+{% block main %}
+<h1>Liste des commandes</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Taille</th>
+            <th>Couleur</th>
+            <th>Accessoire</th>
+            <th>Date</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.size }}</td>
+                <td>{{ order.color }}</td>
+                <td>{{ order.accessory ?: '-' }}</td>
+                <td>{{ order.createdAt|date('d/m/Y H:i') }}</td>
+
+               
+                <td>
+                    <form method="post" action="{{ path('backoffice_order_update_status', {id: order.id}) }}">
+                        <select name="status" onchange="this.form.submit()" class="form-select form-select-sm">
+                            <option value="A faire" {% if order.status == 'A faire' %}selected{% endif %}>A faire</option>
+                            <option value="En cours" {% if order.status == 'En cours' %}selected{% endif %}>En cours</option>
+                            <option value="Fini" {% if order.status == 'Fini' %}selected{% endif %}>Fini</option>
+                        </select>
+                        <input type="hidden" name="_token" value="{{ csrf_token('update_status' ~ order.id) }}">
+                    </form>
+                </td>
+
+                <td>
+                    
+                    <form method="post" action="{{ path('backoffice_order_delete', {id: order.id}) }}" style="display:inline-block;" onsubmit="return confirm('Supprimer cette commande ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ order.id) }}">
+                        <button class="btn btn-danger btn-sm">Supprimer</button>
+                    </form>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune commande trouvée</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

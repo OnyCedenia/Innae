@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle commande{% endblock %}
+
+{% block main %}
+
+<main>
+    <h1>Passer une commande de béret 🎩</h1>
+
+  
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+  
+    {{ form_start(form) }}
+        {{ form_row(form.size) }}
+        {{ form_row(form.color) }}
+        {{ form_row(form.accessory) }}
+        <button class="btn btn-primary">Valider la commande</button>
+    {{ form_end(form) }}
+
+</main>
+{% endblock %}

@@ -26,6 +26,11 @@ class Contact
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -39,7 +44,6 @@ class Contact
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -51,7 +55,6 @@ class Contact
     public function setEmail(string $email): static
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -63,7 +66,6 @@ class Contact
     public function setMessage(string $message): static
     {
         $this->message = $message;
-
         return $this;
     }
 
@@ -72,10 +74,10 @@ class Contact
         return $this->createdAt;
     }
 
+    // setter optionnel
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
 }

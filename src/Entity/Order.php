@@ -6,7 +6,7 @@ use App\Repository\OrderRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
-#[ORM\Table(name: '`order`')]
+#[ORM\Table(name: 'beret_order')]
 class Order
 {
     #[ORM\Id]
@@ -25,6 +25,17 @@ class Order
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $status = null;
+
+
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->status = 'A faire';
+    }
 
     public function getId(): ?int
     {
@@ -76,6 +87,17 @@ class Order
     {
         $this->createdAt = $createdAt;
 
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
         return $this;
     }
 }
