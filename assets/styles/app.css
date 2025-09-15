@@ -60,17 +60,29 @@ nav .listNav a:hover {
 }
 
 li.login-link a {
-  padding: 5px 10px;
+   width: 50px;
+  height: 50px;
   border-radius: 50%;
-  width: 40px;
   border: 2px solid var(--primary-color);
+  display: block;
+  overflow: hidden; /* pour que l'image ne dépasse pas */
   transition: background 0.3s ease;
+  padding: 0; /* supprime le padding */
+ 
 }
 
 li.login-link a:hover {
   background-color: var(--secondary-color);
 
 }
+li.login-link a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* remplissage complet */
+    display: block;
+    border-radius: 50%;  /* pour rester rond */
+}
+
 
 /**********************MAIN**********************/
 
@@ -84,111 +96,79 @@ h1 {
   text-align: center;
 }
 
-/**********************TRAINING**********************/
-.training-links {
+
+
+/**********************FOOTER**********************/
+
+.site-footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo > img {
+    height: 60px;
+    width: auto;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-social a img {
+    width: 25px;
+    margin: 0 5px;
+}
+
+.footer-copy p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+.social-links {
   display: flex;
-}
-.training-links a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-}
-.training-card {
-  flex: 1;
-  text-align: center;
-}
-
-.training-card img {
-  width: 70%;
-  height: 50%; 
-  object-fit: cover; 
-  border-radius: 12px;
-  border: 2px solid var(--primary-color);
-}
-
-
-/**********************LESSONS**********************/
-
-.all-lessons {
-  display: flex;         
-  gap: 20px;               
-  flex-wrap: wrap;        
-  justify-content: center; 
-}
-
-.lessons {
-  flex: 1 1 300px;     
-  border: 2px solid var(--primary-color); 
-  border-radius: 12px;
-  padding: 20px;
-  box-sizing: border-box; 
-  text-align: center;
-}
-
-.lessons > h2{
-  text-align: center;
-}
-
-.lessons-prices>p{
-
- color: var(--primary-color);
-}
-
-.lessons-information{
-  text-align: center;
-  margin-top: 20px;
-}
-
-.contact-link{
-   color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  border: var(--primary-color) 2px solid;
-  padding: 8px 15px;
-  display: inline-block;
-  width: 150px;
-  text-align: center
-}
-
-.contact-link:hover {
-  color: var(--primary-color);
- 
-   background-color: var(--secondary-color);
-
-}
-
-/**********************ANIMATIONS**********************/
-
-.all-animations {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
-}
-
-.animations-description {
-  flex: 1 1 300px;
-  border: 2px solid var(--primary-color);
-  border-radius: 12px;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: var(--secondary-color);
-}
-
-.all-animations > h2 {
-    width: 100%;
-    text-align: center; 
-    margin-bottom: 20px;
-}
-
-.animations{
-  text-align: center;
   margin-top: 20px;
-   flex: 1 1 300px;     
-  border: 2px solid var(--primary-color); 
-  border-radius: 12px;
-  padding: 20px;
-  box-sizing: border-box; 
-  text-align: center;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--text-color);
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.2);
+  fill: var(--primary-color);
+}
+/* Responsive */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+    }
 }

@@ -14,6 +14,18 @@ class Order
     #[ORM\Column]
     private ?int $id = null;
 
+      #[ORM\Column(length: 20)]
+    private ?string $status = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $customerName = null;
+
+    #[ORM\Column(length: 150)]
+    private ?string $customerEmail = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $customerPhone = null;
+
     #[ORM\Column(length: 50)]
     private ?string $size = null;
 
@@ -26,10 +38,7 @@ class Order
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column(length: 20)]
-    private ?string $status = null;
-
-
+  
 
     public function __construct()
     {
@@ -98,6 +107,39 @@ class Order
     public function setStatus(string $status): static
     {
         $this->status = $status;
+        return $this;
+    }
+
+    public function getCustomerName(): ?string
+    {
+        return $this->customerName;
+    }
+
+    public function setCustomerName(string $customerName): static
+    {
+        $this->customerName = $customerName;
+        return $this;
+    }
+
+    public function getCustomerEmail(): ?string
+    {
+        return $this->customerEmail;
+    }
+
+    public function setCustomerEmail(string $customerEmail): static
+    {
+        $this->customerEmail = $customerEmail;
+        return $this;
+    }
+
+    public function getCustomerPhone(): ?string
+    {
+        return $this->customerPhone;
+    }
+
+    public function setCustomerPhone(string $customerPhone): static
+    {
+        $this->customerPhone = $customerPhone;
         return $this;
     }
 }

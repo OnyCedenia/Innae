@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Contact{% endblock %}
-
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/contact.css') }}">
+{% endblock %}
 {% block main %}
-<h1>Formulaire de contact</h1>
 
+<main class="main-contact">
+  <img src="{{ asset('assets/img/ilustrationCedenia.jpg') }}" alt="avatar">
+  
+  <h1>Formulaire de contact</h1>
 {% for message in app.flashes('success') %}
     <div class="alert alert-success">{{ message }}</div>
 {% endfor %}
@@ -15,4 +20,6 @@
     {{ form_row(form.message) }}
     <button type="submit">Envoyer</button>
 {{ form_end(form) }}
+
+</main>
 {% endblock %}
