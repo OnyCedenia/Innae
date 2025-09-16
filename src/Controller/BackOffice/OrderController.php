@@ -65,4 +65,13 @@ final class OrderController extends AbstractController
 
         return $this->redirectToRoute('backoffice_order_index');
     }
+
+    #[Route('/{id}', name: 'backoffice_order_show', methods: ['GET'])]
+public function show(Order $order): Response
+{
+    return $this->render('BackOffice/order/show.html.twig', [
+        'order' => $order,
+    ]);
+}
+
 }
