@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/styles/BackOffice/Admin/dashboard.css') }}">
+{% endblock %}
+
+{% block main %}
+<div class="dashboard">
+    <aside class="sidebar">
+        <img src="{{ asset('assets/img/ilustrationCedenia.jpg') }}" alt="Avatar Admin" class="avatar">
+        <h2>{{ app.user.username }}</h2>
+
+        <nav class="admin-links">
+            <ul>
+                <li><a href="{{ path('backoffice_order_index') }}">Bérets</a></li>
+                <li><a href="{{ path('backoffice_contact_index') }}">Messages Contact</a></li>
+                <li><a href="{{ path('app_logout') }}" class="logout-btn">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <section class="welcome-panel">
+            <h2>Bienvenue, {{ app.user.username }} !</h2>
+            <p>Sur ton espace de gestion, tu peux accéder aux commandes, événements et messages de contact.</p>
+        </section>
+
+        <section class="todo-panel">
+            <h3>Que vas-tu faire aujourd'hui ?</h3>
+            
+            {# Formulaire pense-bête #}
+            {{ form_start(noteForm) }}
+                {{ form_widget(noteForm) }}
+                <button type="submit">💾 Sauvegarder</button>
+            {{ form_end(noteForm) }}
+        </section>
+    </main>
+</div>
+{% endblock %}

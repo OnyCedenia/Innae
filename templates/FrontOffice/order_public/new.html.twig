@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle commande{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/order.css') }}">
+{% endblock %}
+{% block main %}
+<main class="main-order">
+
+    <h1>Passer une commande de béret 🎩</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <section class="order-intro">
+        <p>Exprimez votre style avec un béret unique, fait sur-mesure rien que pour vous ! Choisissez parmi une sélection de couleurs, la taille sur mesure et ajoutez un accessoire pour le rendre vraiment personnel : pompon, broderie, boutons, rubans…</p>
+
+        <p>Chaque béret est confectionné avec soin et attention pour vous garantir qualité et originalité. Parfait pour vous faire plaisir ou offrir un cadeau unique et stylé.</p>
+
+        <h2>Comment commander ?</h2>
+        <ul>
+            <li>Sélectionnez la couleur et la taille.</li>
+            <li>Choisissez vos accessoires préférés.</li>
+            <li>Passez commande et recupérer votre béret personnalisé dans le shop !</li>
+        </ul>
+
+        <p class="price-order">Tarifs : à partir de 50 €, selon les options choisies.</p>
+        <p>Le paiement sera à effectuer par carte bleu , espèce ou chèque lors du retrait de votre commande en magasin</p>
+    </section>
+ <h2>Formulaire de commande</h2>
+    {{ form_start(form) }}
+        {{ form_row(form.customerName) }}
+        {{ form_row(form.customerEmail) }}
+        {{ form_row(form.customerPhone) }}
+        {{ form_row(form.size) }}
+        {{ form_row(form.color) }}
+        {{ form_row(form.accessory) }}
+        <button class="btn btn-primary">Valider la commande</button>
+    {{ form_end(form) }}
+
+</main>
+{% endblock %}

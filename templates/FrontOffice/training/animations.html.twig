@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animations
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/animations.css') }}">
+{% endblock %}
+{% block main %}
+
+	<main>
+
+		<h1>Ateliers</h1>
+
+		<div class="animations-description">
+			<p>
+				En plus des cours de couture, nous vous proposons des ateliers thématiques pour explorer différentes techniques et repartir avec vos propres créations uniques. Ces ateliers sont ouverts à tous, petits et grands, et se déroulent chaque samedi au shop.
+			</p>
+		</div>
+		<div class="all-animations">
+
+			<h2>
+				Organisation des ateliers
+			</h2>
+
+			<div class="animations">
+				<h3>
+					1er et 3ème samedi du mois
+				</h3>
+				<p>
+					- 9h à 12h : Broderie – Initiez-vous à l’art du fil et personnalisez vos tissus avec élégance.
+				</p>
+
+				<p>
+					- 14h à 17h : Création de peluches – Fabriquez votre propre doudou ou mascotte, 100 % unique !
+				</p>
+
+			</div>
+
+			<div class="animations">
+				<h3>
+					2ème samedi du mois
+				</h3>
+				<p>
+					- 9h à 12h : Peinture sur textile – Donnez une seconde vie à vos vêtements grâce à la customisation.
+				</p>
+
+				<p>
+					- 14h à 17h : Atelier Récup’ – Transformez, recyclez et créez à partir de tissus et objets oubliés.
+				</p>
+			</div>
+
+			<div class="animations">
+				<h3>
+					Dernier samedi du mois
+				</h3>
+
+				<p>
+					- 14h à 17h : Atelier surprise choisi par vous !
+																	Grâce à la boîte à idées disponible en boutique, les élèves votent en début de mois pour choisir le thème.
+				</p>
+
+			</div>
+
+			<div class="lessons-prices">
+				<p>
+					Tarifs
+																		•	Atelier 3h : 55 € par participant
+																		•	Carte 3 ateliers : 150 € (soit 50 €/atelier)
+																		•	Carte 6 ateliers : 280 € (soit 46 €/atelier)
+
+				</p>
+			</div>
+
+			<div class="lessons-information">
+				<p>
+					Pour plus d’informations et pour réserver votre place, n’hésitez pas à nous contacter via notre formulaire en ligne ou par téléphone. Nous serons ravis de vous accueillir dans nos ateliers et de partager avec vous la magie de la couture !
+				</p>
+				<p class="contact-link">
+					<a href="{{ path('app_contact_public') }}">Contact</a>
+				</p>
+			</div>
+
+		</div>
+
+	</main>
+{% endblock %}

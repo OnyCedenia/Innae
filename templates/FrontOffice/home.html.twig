@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/home.css') }}"> 
+	<script src="{{ asset('assets/home.js') }}"></script>
+{% endblock %}
+
+   
+
+{% block main %}
+	<main class="main-home">
+
+		<img src="{{ asset('assets/img/ilustrationCedenia.jpg') }}" alt="avatar">
+
+		<div class="presentation">
+			<h1>Bienvenue sur Innae</h1>
+
+			<p>Cédénïa , couturière/Chapellière vous propose de plonger dans son univer doux et coloré avec des créations sur mesure , des ateliers colllectif  d’initiation à la couture et broderie pour les enfants et ado agée de 7 à 17ans , mais aussi  des cours particulier tout âge à partir de 7ans. 
+				Vous pouvez également la retrouvée lors de divers événements dans la region Rhone ALpe et PACA principalement et prochainement dans d’autres.
+			</p>
+
+		</div>
+		<div class="carousel">
+			<div class="carousel-track">
+				<div class="carousel-slide"><img src="{{ asset('assets/img/BeretChampignon.JPEG') }}" alt="Slide 1"></div>
+				<div class="carousel-slide"><img src="{{ asset('assets/img/BeretGrenouille.JPEG') }}" alt="Slide 2"></div>
+				<div class="carousel-slide"><img src="{{ asset('assets/img/BeretRenard.JPEG') }}" alt="Slide 3"></div>
+				<div class="carousel-slide"><img src="{{ asset('assets/img/ashley-diane-worsham-k8WsZMKAafQ-unsplash.jpg') }}" alt="Slide 4"></div>
+				<div class="carousel-slide"><img src="{{ asset('assets/img/debby-hudson-d9gDYKSfU6M-unsplash.jpg') }}" alt="Slide 5"></div>
+			</div>
+
+			<button class="carousel-btn prev">⟨</button>
+			<button class="carousel-btn next">⟩</button>
+
+		</div>
+
+	</main>
+{% endblock %}

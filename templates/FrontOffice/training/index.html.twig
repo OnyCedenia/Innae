@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours & Ateliers{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/training.css') }}">
+{% endblock %}
+
+{% block main %}
+<main>
+<h1>Cours & Ateliers</h1>
+
+
+
+<div class="training-links">
+    <a href="{{ path('app_training_lessons') }}" class="training-card">
+        <h2>Cours</h2>
+         <img src="{{ asset('assets/img/ashley-diane-worsham-k8WsZMKAafQ-unsplash.jpg') }}" alt="image cours">
+        {# <p>Découvrez tous nos cours et leur planning.</p> #}
+    </a>
+
+    <a href="{{ path('app_training_animations') }}" class="training-card">
+        <h2>Ateliers</h2>
+        <img src="{{ asset('assets/img/debby-hudson-d9gDYKSfU6M-unsplash.jpg') }}" alt="image ateliers">
+        {# <p>Participez à nos ateliers créatifs et animations.</p> #}
+    </a>
+</div>
+</main>
+{% endblock %}

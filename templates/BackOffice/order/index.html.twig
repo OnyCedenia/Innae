@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les commandes
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/BackOffice/Admin/Order/index.css') }}">
+{% endblock %}
+
+{% block main %}
+	<main class="orders-list">
+
+		<h1>Liste des commandes</h1>
+	<a href="{{ path('backoffice_dashboard') }}" class="back-dashboard">
+			<iconify-icon icon="mdi:arrow-left-bold" width="20" height="20"></iconify-icon>
+		</a>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nom</th>
+					<th>Email</th>
+					<th>Téléphone</th>
+					<th>Taille</th>
+					<th>Couleur</th>
+					<th>Accessoire</th>
+					<th>Date</th>
+					<th>Statut</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for order in orders %}
+					<tr>
+						<td>{{ order.id }}</td>
+						<td>{{ order.customerName }}</td>
+						<td>{{ order.customerEmail }}</td>
+						<td>{{ order.customerPhone }}</td>
+						<td>{{ order.size }}</td>
+						<td>{{ order.color }}</td>
+						<td>{{ order.accessory ?: '-' }}</td>
+						<td>{{ order.createdAt|date('d/m/Y H:i') }}</td>
+
+						<td>
+							<span class="status-badge status-{{ order.status|lower|replace({' ': '-'}) }}">
+								{{ order.status }}
+							</span>
+
+							<form method="post" action="{{ path('backoffice_order_update_status', {id: order.id}) }}">
+								<select name="status" onchange="this.form.submit()" class="form-select form-select-sm">
+									<option value="A faire" {% if order.status == 'A faire' %} selected {% endif %}>A faire</option>
+									<option value="En cours" {% if order.status == 'En cours' %} selected {% endif %}>En cours</option>
+									<option value="Fini" {% if order.status == 'Fini' %} selected {% endif %}>Fini</option>
+								</select>
+								<input type="hidden" name="_token" value="{{ csrf_token('update_status' ~ order.id) }}">
+							</form>
+						</td>
+
+						<td>
+							<a href="{{ path('backoffice_order_show', {id: order.id}) }}" class="btn btn-view">Voir</a>
+
+							<form method="post" action="{{ path('backoffice_order_delete', {id: order.id}) }}" style="display:inline-block;" onsubmit="return confirm('Supprimer cette commande ?');">
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ order.id) }}">
+								<button class="btn btn-danger btn-sm">Supprimer</button>
+							</form>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="10">Aucune commande trouvée</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
+{% endblock %}

@@ -6,13 +6,25 @@ use App\Repository\OrderRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
-#[ORM\Table(name: '`order`')]
+#[ORM\Table(name: 'beret_order')]
 class Order
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+      #[ORM\Column(length: 20)]
+    private ?string $status = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $customerName = null;
+
+    #[ORM\Column(length: 150)]
+    private ?string $customerEmail = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $customerPhone = null;
 
     #[ORM\Column(length: 50)]
     private ?string $size = null;
@@ -25,6 +37,14 @@ class Order
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
+
+  
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->status = 'A faire';
+    }
 
     public function getId(): ?int
     {
@@ -76,6 +96,50 @@ class Order
     {
         $this->createdAt = $createdAt;
 
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    public function getCustomerName(): ?string
+    {
+        return $this->customerName;
+    }
+
+    public function setCustomerName(string $customerName): static
+    {
+        $this->customerName = $customerName;
+        return $this;
+    }
+
+    public function getCustomerEmail(): ?string
+    {
+        return $this->customerEmail;
+    }
+
+    public function setCustomerEmail(string $customerEmail): static
+    {
+        $this->customerEmail = $customerEmail;
+        return $this;
+    }
+
+    public function getCustomerPhone(): ?string
+    {
+        return $this->customerPhone;
+    }
+
+    public function setCustomerPhone(string $customerPhone): static
+    {
+        $this->customerPhone = $customerPhone;
         return $this;
     }
 }

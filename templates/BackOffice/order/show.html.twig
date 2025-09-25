@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la commande #{{ order.id }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/styles/BackOffice/Admin/Order/show.css') }}">
+{% endblock %}
+
+{% block main %}
+<main class="order-details">
+    <h1>Commande #{{ order.id }}</h1>
+    <p><strong>Date :</strong> {{ order.createdAt|date('d/m/Y H:i') }}</p>
+
+    <h2>Informations client</h2>
+    <ul>
+        <li><strong>Nom :</strong> {{ order.customerName }}</li>
+        <li><strong>Email :</strong> {{ order.customerEmail }}</li>
+        <li><strong>Téléphone :</strong> {{ order.customerPhone }}</li>
+    </ul>
+
+    <h2>Détails du béret</h2>
+    <ul>
+        <li><strong>Taille :</strong> {{ order.size }}</li>
+        <li><strong>Couleur :</strong> {{ order.color }}</li>
+        <li><strong>Accessoire :</strong> {{ order.accessory ?: '-' }}</li>
+    </ul>
+
+    <h2>Statut de la commande</h2>
+    <form method="post" action="{{ path('backoffice_order_update_status', {id: order.id}) }}">
+        <select name="status" onchange="this.form.submit()" class="form-select">
+            <option value="A faire" {% if order.status == 'A faire' %}selected{% endif %}>A faire</option>
+            <option value="En cours" {% if order.status == 'En cours' %}selected{% endif %}>En cours</option>
+            <option value="Fini" {% if order.status == 'Fini' %}selected{% endif %}>Fini</option>
+        </select>
+        <input type="hidden" name="_token" value="{{ csrf_token('update_status' ~ order.id) }}">
+    </form>
+
+    <div class="actions">
+        <a href="{{ path('backoffice_order_index') }}" class="btn btn-secondary">⬅ Retour à la liste</a>
+
+        <form method="post" action="{{ path('backoffice_order_delete', {id: order.id}) }}" 
+              style="display:inline-block;" 
+              onsubmit="return confirm('Supprimer cette commande ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ order.id) }}">
+            <button class="btn btn-danger">🗑 Supprimer</button>
+        </form>
+    </main>
+</div>
+{% endblock %}
