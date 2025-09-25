@@ -1,48 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Messages Contact{% endblock %}
+{% block title %}Messages Contact
+{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('assets/styles/BackOffice/Admin/Contact/index.css') }}">
+	<link rel="stylesheet" href="{{ asset('styles/BackOffice/Admin/Contact/index.css') }}">
 {% endblock %}
 
 {% block main %}
-<h1>Liste des messages de contact</h1>
+	<h1>Liste des messages de contact</h1>
 	<a href="{{ path('backoffice_dashboard') }}" class="back-dashboard">
-			<iconify-icon icon="mdi:arrow-left-bold" width="20" height="20"></iconify-icon>
-		</a>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Date</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.name }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.message|length > 50 ? contact.message[:50] ~ '...' : contact.message }}</td>
-                <td>{{ contact.createdAt|date('d/m/Y H:i') }}</td>
-                <td>
-                    <a href="{{ path('backoffice_contact_show', {id: contact.id}) }}" class="btn btn-info btn-sm">Voir</a>
-                    <form method="post" action="{{ path('backoffice_contact_delete', {id: contact.id}) }}" style="display:inline-block;" onsubmit="return confirm('Supprimer ce message ?');">
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
-                        <button class="btn btn-danger btn-sm">Supprimer</button>
-                    </form>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">Aucun message trouvé</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+		<iconify-icon icon="mdi:arrow-left-bold" width="20" height="20"></iconify-icon>
+	</a>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Email</th>
+				<th>Message</th>
+				<th>Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for contact in contacts %}
+				<tr>
+					<td>{{ contact.id }}</td>
+					<td>{{ contact.name }}</td>
+					<td>{{ contact.email }}</td>
+					<td>{{ contact.message|length > 50 ? contact.message[:50] ~ '...' : contact.message }}</td>
+					<td>{{ contact.createdAt|date('d/m/Y H:i') }}</td>
+					<td>
+						<a href="{{ path('backoffice_contact_show', {id: contact.id}) }}" class="btn btn-info btn-sm">Voir</a>
+						<form method="post" action="{{ path('backoffice_contact_delete', {id: contact.id}) }}" style="display:inline-block;" onsubmit="return confirm('Supprimer ce message ?');">
+							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
+							<button class="btn btn-danger btn-sm">Supprimer</button>
+						</form>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">Aucun message trouvé</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}

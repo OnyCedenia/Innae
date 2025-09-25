@@ -1,0 +1,91 @@
+.back-dashboard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-dashboard:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+.orders-list {
+    padding: 20px;
+ 
+}
+
+.orders-list h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.orders-list table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.orders-list th, .orders-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.orders-list th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.orders-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.orders-list tr:hover {
+    background-color: #f1f1f1;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.status-a-faire { background-color: #f0ad4e; }
+.status-en-cours { background-color: #5bc0de; }
+.status-fini { background-color: #5cb85c; }
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-view { background-color: #0275d8; }
+.btn-view:hover { background-color: #025aa5; }
+
+.btn-danger { background-color: #d9534f; }
+.btn-danger:hover { background-color: #c12e2a; }
+
+.form-select {
+    padding: 5px;
+    border-radius: 6px;
+}

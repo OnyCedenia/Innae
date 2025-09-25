@@ -3,98 +3,97 @@
 {% block title %}Cours
 {% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/styles/FrontOffice/lessons.css') }}">
+	<link rel="stylesheet" href="{{ asset('styles/FrontOffice/lessons.css') }}">
 {% endblock %}
 {% block main %}
 
-<main>
-	<h1>Cours</h1>
+	<main>
+		<h1>Cours</h1>
 
 
-	<div class="all-lessons">
-		<div class="lessons">
+		<div class="all-lessons">
+			<div class="lessons">
 
-			<h2>
-				Cours Particuliers
-			</h2>
+				<h2>
+					Cours Particuliers
+				</h2>
 
-			<p>
-				-Découvrez la couture de manière personnalisée !
-			</p>
-
-			<p>
-				-Nos cours particuliers sont conçus pour les enfants dès 7 ans, mais aussi pour les adolescents et adultes souhaitant progresser à leur rythme.
-			</p>
-
-			<p>
-				-Chaque séance est adaptée à votre niveau et à vos envies, que ce soit pour créer vos propres vêtements, accessoires ou projets créatifs.
-			</p>
-
-			<p>
-				-Grâce à un accompagnement individualisé, vous apprendrez les bases de la couture, les techniques avancées et développerez votre créativité en toute confiance. C’est l’occasion idéale de progresser rapidement tout en s’amusant !
-			</p>
-
-			<div class="lessons-prices">
 				<p>
-					-Tarifs :
-					
-					Séance unique (1h30) : 45 €
-					
-					Pack 5 séances : 210 € (42 €/séance)
-					
-					Pack 10 séances : 400 € (40 €/séance)
+					-Découvrez la couture de manière personnalisée !
 				</p>
+
+				<p>
+					-Nos cours particuliers sont conçus pour les enfants dès 7 ans, mais aussi pour les adolescents et adultes souhaitant progresser à leur rythme.
+				</p>
+
+				<p>
+					-Chaque séance est adaptée à votre niveau et à vos envies, que ce soit pour créer vos propres vêtements, accessoires ou projets créatifs.
+				</p>
+
+				<p>
+					-Grâce à un accompagnement individualisé, vous apprendrez les bases de la couture, les techniques avancées et développerez votre créativité en toute confiance. C’est l’occasion idéale de progresser rapidement tout en s’amusant !
+				</p>
+
+				<div class="lessons-prices">
+					<p>
+						-Tarifs :
+											
+											Séance unique (1h30) : 45 €
+											
+											Pack 5 séances : 210 € (42 €/séance)
+											
+											Pack 10 séances : 400 € (40 €/séance)
+					</p>
+				</div>
+
 			</div>
 
-		</div>
+			<div class="lessons">
+				<h2>
+					Cours Collectifs</h2>
 
-		<div class="lessons">
-			<h2>
-				Cours Collectifs</h2>
-
-			<p>
-				-Rejoignez nos ateliers collectifs et partagez la passion de la couture dans une ambiance conviviale !
-			</p>
-
-			<p>
-				-Ouverts à tous niveaux, ces cours permettent d’apprendre de nouvelles techniques, d’échanger des astuces et de s’inspirer des projets des autres participants.
-			</p>
-
-			<p>
-				-Que vous soyez débutant ou déjà expérimenté, vous pourrez créer vos propres vêtements et accessoires, progresser à votre rythme et profiter de l’émulation du groupe pour développer votre créativité. L’apprentissage collectif rend chaque séance stimulante et motivante !
-			</p>
-
-			<div class="lessons-prices">
-
-				<p>-Tarifs :
-					
-					Séance unique (2h) : 35 € par participant
-					
-					Pack 5 séances : 160 € (32 €/séance)
-					
-					Pack 10 séances : 300 € (30 €/séance)
+				<p>
+					-Rejoignez nos ateliers collectifs et partagez la passion de la couture dans une ambiance conviviale !
 				</p>
+
+				<p>
+					-Ouverts à tous niveaux, ces cours permettent d’apprendre de nouvelles techniques, d’échanger des astuces et de s’inspirer des projets des autres participants.
+				</p>
+
+				<p>
+					-Que vous soyez débutant ou déjà expérimenté, vous pourrez créer vos propres vêtements et accessoires, progresser à votre rythme et profiter de l’émulation du groupe pour développer votre créativité. L’apprentissage collectif rend chaque séance stimulante et motivante !
+				</p>
+
+				<div class="lessons-prices">
+
+					<p>-Tarifs :
+											
+											Séance unique (2h) : 35 € par participant
+											
+											Pack 5 séances : 160 € (32 €/séance)
+											
+											Pack 10 séances : 300 € (30 €/séance)
+					</p>
+				</div>
+
 			</div>
 
+
 		</div>
-
-		
-
-    </div>
-<div class="lessons-information">
+		<div class="lessons-information">
 
 			<p>
 				Horaires : Tous les soirs de 18h à 20h et les mercredis de 14h à 16h ou 18h à 20h.
 			</p>
 
 			<p>
-            Pour plus d’informations et pour réserver votre place, n’hésitez pas à nous contacter via notre formulaire en ligne ou par téléphone. Nous serons ravis de vous accueillir dans nos ateliers et de partager avec vous la magie de la couture !
-            </p>
-<p class="contact-link">
-<a href="{{ path('app_contact_public') }}">Contact</a>
-</p>
+				Pour plus d’informations et pour réserver votre place, n’hésitez pas à nous contacter via notre formulaire en ligne ou par téléphone. Nous serons ravis de vous accueillir dans nos ateliers et de partager avec vous la magie de la couture !
+			</p>
+			<p class="contact-link">
+				<a href="{{ path('app_contact_public') }}">Contact</a>
+			</p>
 
 		</div>
 
-</main>
-	{% endblock %}
+	</main>
+{% endblock %}

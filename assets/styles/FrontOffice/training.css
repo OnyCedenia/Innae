@@ -1,0 +1,21 @@
+/**********************TRAINING**********************/
+.training-links {
+  display: flex;
+}
+.training-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.training-card {
+  flex: 1;
+  text-align: center;
+}
+
+.training-card img {
+  width: 70%;
+  height: 50%; 
+  object-fit: cover; 
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+}

@@ -1,19 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Message Contact{% endblock %}
+{% block title %}Message Contact
+{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/styles/BackOffice/Admin/Contact/show.css') }}">
+	<link rel="stylesheet" href="{{ asset('styles/BackOffice/Admin/Contact/show.css') }}">
 {% endblock %}
 
 {% block main %}
-<main class="contact-show">
-    <h1>Message de {{ contact.name }}</h1>
+	<main class="contact-show">
+		<h1>Message de
+			{{ contact.name }}</h1>
 
-    <p><strong>Email :</strong> {{ contact.email }}</p>
-    <p><strong>Message :</strong></p>
-    <p>{{ contact.message }}</p>
-    <p><strong>Envoyé le :</strong> {{ contact.createdAt|date('d/m/Y H:i') }}</p>
+		<p>
+			<strong>Email :</strong>
+			{{ contact.email }}</p>
+		<p>
+			<strong>Message :</strong>
+		</p>
+		<p>{{ contact.message }}</p>
+		<p>
+			<strong>Envoyé le :</strong>
+			{{ contact.createdAt|date('d/m/Y H:i') }}</p>
 
-    <a href="{{ path('backoffice_contact_index') }}" class="btn btn-info">← Retour à la liste</a>
-</main>
+		<a href="{{ path('backoffice_contact_index') }}" class="btn btn-info">← Retour à la liste</a>
+	</main>
 {% endblock %}

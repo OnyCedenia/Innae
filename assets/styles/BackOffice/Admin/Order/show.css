@@ -1,0 +1,84 @@
+.order-details {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
+
+.order-details h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.order-details h2 {
+  font-size: 1.4rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #444;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 5px;
+}
+
+.order-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.order-details li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-details strong {
+  color: #222;
+}
+
+.order-details form {
+  margin-top: 10px;
+}
+
+.order-details select {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.actions .btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary {
+  background: #ddd;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #ccc;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
