@@ -10,14 +10,14 @@
 {% block main %}
 	<div class="dashboard">
 		<aside class="sidebar">
-			<img src="{{ asset('img/ilustrationCedenia.jpg') }}" alt="Avatar Admin" class="avatar">
+			<img src="{{ asset('img/IlustrationCedenia.jpg') }}" alt="Avatar Admin" class="avatar">
 			<h2>{{ app.user.username }}</h2>
 
 			<nav class="admin-links">
 				<ul>
-					<li><ahref="{{ path('backoffice_order_index') }}">Bérets</a></li>
-					<li><ahref="{{ path('backoffice_contact_index') }}">Messages Contact</a></li>
-					<li><ahref="{{ path('app_logout') }}" class="logout-btn">Déconnexion</a></li>
+					<li><ahref="{{path('backoffice_order_index')}}">Bérets</a></li>
+					<li><ahref="{{path('backoffice_contact_index')}}">Messages Contact</a></li>
+					<li><ahref="{{path('app_logout')}}" class="logout-btn">Déconnexion</a></li>
 				</ul>
 			</nav>
 		</aside>
