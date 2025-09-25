@@ -9,12 +9,10 @@
 
     <h1>Passer une commande de béret 🎩</h1>
 
-    {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }}">
-                {{ message }}
-            </div>
-        {% endfor %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
     {% endfor %}
 
     <section class="order-intro">

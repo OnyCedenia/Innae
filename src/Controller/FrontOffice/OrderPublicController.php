@@ -16,18 +16,21 @@ final class OrderPublicController extends AbstractController
     public function new(Request $request, EntityManagerInterface $em): Response
     {
         $order = new Order();
-
         $form = $this->createForm(OrderType::class, $order);
-
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($order);
             $em->flush();
 
-            $this->addFlash('success', 'Votre commande a bien été enregistrée ! ✅');
+            
+            $this->addFlash(
+                'success',
+                'Votre commande a bien été prise en compte. 
+                 Vous recevrez un email dès que la préparation commencera.'
+            );
 
+   
             return $this->redirectToRoute('app_order_public');
         }
 
