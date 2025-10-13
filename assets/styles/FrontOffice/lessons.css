@@ -47,3 +47,30 @@
    background-color: var(--secondary-color);
 
 }
+
+@media screen and (max-width: 768px) {
+  .all-lessons {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .lessons {
+    flex: 1 1 90%; 
+    padding: 15px;
+  }
+
+  .lessons > h2 {
+    font-size: 1.5rem;
+  }
+
+  .lessons-prices > p {
+    font-size: 1.2rem;
+  }
+
+ .contact-link {
+    width: 150px;       
+    font-size: 1.3rem;  
+    padding: 12px 25px; 
+  }
+}

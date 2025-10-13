@@ -117,4 +117,54 @@
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
+@media screen and (max-width: 768px) {
+  .dashboard {
+    flex-direction: row; 
+    gap: 30px;
+    padding: 25px;
+  }
 
+  .sidebar {
+    width: 250px; 
+    padding: 25px;
+  }
+
+  .sidebar .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sidebar h2 {
+    font-size: 1.8rem; 
+  }
+
+  .admin-links a {
+    font-size: 1.3rem;
+    padding: 14px;
+  }
+
+  .dashboard-main {
+    flex: 1;
+    gap: 25px;
+  }
+
+  .welcome-panel,
+  .todo-panel {
+    padding: 25px;
+  }
+
+  .welcome-panel h2,
+  .todo-panel h3 {
+    font-size: 1.6rem; 
+  }
+
+  .todo-panel textarea {
+    font-size: 1.2rem;
+    padding: 14px;
+  }
+
+  .todo-panel button {
+    font-size: 1.3rem;
+    padding: 14px 22px;
+  }
+}

@@ -16,32 +16,13 @@ final class OrderController extends AbstractController
 {
     #[Route('/', name: 'backoffice_order_index', methods: ['GET'])]
     public function index(OrderRepository $orderRepository): Response
+
     {
         return $this->render('BackOffice/order/index.html.twig', [
             'orders' => $orderRepository->findAll(),
         ]);
     }
 
-    #[Route('/new', name: 'backoffice_order_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $em): Response
-    {
-        $order = new Order();
-        $form = $this->createForm(OrderType::class, $order);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($order);
-            $em->flush();
-
-            $this->addFlash('success', 'Commande créée avec succès ✅');
-
-            return $this->redirectToRoute('backoffice_order_index');
-        }
-
-        return $this->render('BackOffice/order/new.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
     #[Route('/{id}/status', name: 'backoffice_order_update_status', methods: ['POST'])]
     public function updateStatus(Request $request, Order $order, EntityManagerInterface $em): Response
     {

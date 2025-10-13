@@ -54,7 +54,7 @@
 
 			<form method="post" action="{{ path('backoffice_order_delete', {id: order.id}) }}" style="display:inline-block;" onsubmit="return confirm('Supprimer cette commande ?');">
 				<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ order.id) }}">
-				<button class="btn btn-danger">🗑 Supprimer</button>
+				<button class="btn btn-danger"> Supprimer</button>
 			</form>
 		</main>
 	</div>

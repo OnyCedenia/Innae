@@ -88,7 +88,6 @@ li.login-link a img {
 
 
 h1 {
-
   font-size: 2rem;
   color: var(--primary-color);
   margin-top: 40px;
@@ -162,13 +161,68 @@ h1 {
   transform: scale(1.2);
   fill: var(--primary-color);
 }
-/* Responsive */
-@media (min-width: 768px) {
-    .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: left;
-    }
+
+@media screen and (max-width: 768px) {
+  /* Pour mobiles */
+
+  body {
+    font-size: 1.15rem;
+  }
+
+  header>.logo img {
+    height: 100px;
+  }
+
+  .logo {
+    margin: 10px;
+    flex-direction: column;
+  }
+
+  nav .listNav a {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+  }
+
+  li.login-link a {
+    width: 50px;
+    height: 50px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-container {
+    gap: 15px;
+  }
+
+  .footer-logo > img {
+    height: 45px;
+  }
+
+  .footer-links a {
+    margin: 5px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a img {
+    width: 20px;
+  }
+
+  .footer-copy p {
+    font-size: 1rem;
+  }
+
+  .social-icon svg {
+    width: 25px;
+    height: 25px;
+  }
 }

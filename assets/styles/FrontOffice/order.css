@@ -141,4 +141,31 @@ main > h2{
  color: var(--primary-color);
 }
 
+@media screen and (max-width: 768px) {
 
+  .main-order form {
+    max-width: 650px;   /* on garde la même largeur que desktop */
+    padding: 45px;       /* padding confortable */
+  }
+
+  .main-order form input,
+  .main-order form select,
+  .main-order form textarea {
+    font-size: 1.35rem;  
+    padding: 20px;
+  }
+
+  .main-order form button {
+    font-size: 1.35rem;
+    padding: 18px 32px;
+  }
+   .color-choice label {
+    width: 70px ;
+    height: 70px ;
+    border-width: 4px;
+  }
+
+  .color-choice input[type="radio"]:checked + label {
+    border-width: 4px;
+  }
+}

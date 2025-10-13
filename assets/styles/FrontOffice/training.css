@@ -19,3 +19,24 @@
   border-radius: 12px;
   border: 2px solid var(--primary-color);
 }
+
+@media screen and (max-width: 768px) {
+  .training-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;   
+  }
+
+  .training-card {
+    width: 90%;   
+  }
+
+  .training-card img {
+    width: 100%;  
+    height: auto; 
+  }
+
+  .training-card a {
+    font-size: 1.1rem;  
+  }
+}

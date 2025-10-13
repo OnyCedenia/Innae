@@ -61,3 +61,28 @@
   text-align: center;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+
+  .all-animations > h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+
+  .animations-description,
+  .animations {
+    flex: 1 1 90%; 
+    padding: 30px;
+    font-size: 1.25rem;
+  }
+
+  .contact-link {
+    font-size: 1.25rem;
+    padding: 12px 20px;
+    width: 180px;
+  }
+
+  .lessons-prices > p {
+    font-size: 1.25rem;
+  }
+}

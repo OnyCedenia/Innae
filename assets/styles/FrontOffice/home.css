@@ -5,7 +5,8 @@
   justify-content: flex-start; 
   align-items: center;
   min-height: auto;            
-  margin-top: 40px;      
+  margin-top: 40px; 
+
 }
 
 main > img{
@@ -75,4 +76,39 @@ main > img{
 
 .carousel-btn:hover {
     background: rgba(0,0,0,0.7);
+}
+/* Mobile et petits écrans */
+@media screen and (max-width: 768px) {
+
+  .main-home {
+    margin-top: 20px;
+  }
+
+  main > img {
+    width: 120px;
+  }
+
+  .presentation {
+    width: 90%;
+    padding: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6; 
+  }
+
+  .presentation h1 {
+    font-size: 2.2rem; 
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-slide {
+    height: 400px;
+  }
+
+  nav .listNav a {
+    width: 100%;
+    font-size: 1.1rem; 
+  }
 }

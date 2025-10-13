@@ -89,3 +89,57 @@
     padding: 5px;
     border-radius: 6px;
 }
+@media (max-width: 768px) {
+  
+  .orders-list table, 
+  .orders-list thead, 
+  .orders-list tbody, 
+  .orders-list th, 
+  .orders-list td, 
+  .orders-list tr {
+      display: block;
+  }
+
+  
+  .orders-list th {
+      display: none;
+  }
+
+  .orders-list td {
+      padding: 10px 10px 10px 50%;
+      position: relative;
+      text-align: left;
+      border: none; 
+      border-bottom: 1px solid #ddd;
+  }
+
+  .orders-list td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--primary-color);
+  }
+
+
+  .status-badge, .btn {
+      display: inline-block;
+      margin: 5px 0;
+  }
+
+  .orders-list {
+      padding: 15px;
+  }
+
+ 
+  .back-dashboard {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
